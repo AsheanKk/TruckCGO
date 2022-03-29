@@ -8,6 +8,8 @@ import java.util.regex.*;
 
 public class Solution {
 
+    static final int COST_PER_ITEM = 40;
+
     public static void printArray(double[] array) {
         for (int i = 0; i < array.length; i++) {
             if (i != (array.length - 1)) {
@@ -24,14 +26,17 @@ public class Solution {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT */
 
         // Input
+        System.out.print("Input total amount of items: ");
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         double[] objects = new double[n];
+        System.out.println("Enter the weights of: ");
         for (int i = 0; i < objects.length; i++) {
+            System.out.print("Item " + (i + 1) + " -> ");
             objects[i] = scanner.nextDouble();
         }
 
-        System.out.println("Given: ");
+        System.out.println("\nGiven: ");
         printArray(objects);
 
         int limit = 10000; // This is the capacity of the truck
@@ -72,9 +77,12 @@ public class Solution {
         // PRINT YOUR SOLUTION:
         // ON THE FIRST LINE, PRINT YOUR ARRAY WITH 'printArray(array)'. YOUR ARRAY NEEDS TO BE SORTED FROM SMALLEST TO LARGEST.
         //TODO: Check if you can NOT use printArray(). If yes ->
-        System.out.println(loaded);
+        System.out.println("\n\n----------------------RESULTS-------------------------------");
+        System.out.println("Chosen Loads: " + loaded);
         // ON THE SECOND LINE, PRINT THE SCORE OF YOUR SOLUTION.
-        System.out.println("Score: " + currentLoad);
+        System.out.println("Total Load: " + currentLoad);
+        System.out.println("Total cost: €" + loaded.size() * COST_PER_ITEM);
+        System.out.println("\n------------------------------------------------------------");
 
     }
 
