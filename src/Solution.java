@@ -21,6 +21,19 @@ public class Solution {
         System.out.print("\n");
     }
 
+    //Just in case we need to use
+    public static void printList(List<Double> list){
+        for (int i = 0; i < list.size(); i++) {
+            if (i != (list.size() - 1)) {
+                System.out.printf("%.0f ", list.get(i));
+            } else {
+                System.out.printf("%.0f", list.get(i));
+            }
+        }
+        System.out.print("\n");
+    }
+
+
 
     public static void main(String[] args) throws Exception {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT */
@@ -79,7 +92,8 @@ public class Solution {
         //TODO: Check if you can NOT use printArray(). If yes ->
         System.out.println("\n\n----------------------RESULTS-------------------------------");
         System.out.println("Chosen Loads: " + loaded);
-        // ON THE SECOND LINE, PRINT THE SCORE OF YOUR SOLUTION.
+        //TODO: If we have to use printList(). ->    System.out.print("Chosen Loads: ");     printList(loaded);
+        //ON THE SECOND LINE, PRINT THE SCORE OF YOUR SOLUTION.
         System.out.println("Total Load: " + currentLoad);
         System.out.println("Total cost: €" + loaded.size() * COST_PER_ITEM);
         System.out.println("\n------------------------------------------------------------");
